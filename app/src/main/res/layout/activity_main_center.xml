@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg"
+    >
+    <RelativeLayout
+        android:id="@+id/main_act_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack" >
+
+        <LinearLayout
+            android:id="@+id/main_act_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/main_act_tab_vr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/vr"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/main_act_tab_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/hot"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/main_act_tab_live"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/live"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/main_act_tab_scene"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/scene"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/main_act_tab_line"
+            android:layout_width="30dp"
+            android:layout_height="2dp"
+            android:layout_alignBottom="@id/main_act_tab_layout"
+            android:background="@color/colorBlue" />
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_act_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_act_tab"
+        android:fadingEdge="none" />
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorBlue">#128ce1</color>
+    <color name="colorGray">#999999</color>
+    <color name="colorGray2">#f0f0f0</color>
+    <color name="colorGray3">#dfdfdf</color>
+    <color name="tip_red_error">#F5572D</color>
+    <color name="tip_red_reinput">#fd5a4b</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBg">#f0eff5</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorLine">#d2d2d2</color>
+    <color name="splitline">#e9e9e9</color>
+    <color name="gesure_tip_normal">#949494</color>
+    <color name="gesure_line">#118ae1</color>
+    <color name="colorLine2">#d9d9dd</color>
+    <color name="colorBule2">#0697ff</color>
+    <color name="hui">#706E79</color>
+    <color name="transparent">#00000000</color>
+</resources>

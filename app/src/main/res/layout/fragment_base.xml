@@ -1,0 +1,20 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:pla="http://schemas.android.com/apk/res-auto"
+    tools:context=".base.BaseListFragment"
+    >
+
+    <com.huewu.pla.lib.XListView
+        android:id="@+id/fragment_base_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fastScrollEnabled="true"
+        android:scrollbars="vertical"
+        pla:plaColumnNumber="2"
+        pla:plaContentBackground="@color/transparent"
+        >
+    </com.huewu.pla.lib.XListView>
+
+</FrameLayout>

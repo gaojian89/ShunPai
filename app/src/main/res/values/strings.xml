@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">舜拍</string>
+    <string name="vr">VR全景</string>
+    <string name="hot">热门</string>
+    <string name="live">直播</string>
+    <string name="scene">现场</string>
+    <string name="app_exit_notify_text">再按一次退出舜拍</string>
+    <string name="comment">评论</string>
+    <string name="loading">loading</string>
+    <string name="no_comments">暂无评论</string>
+
+</resources>
