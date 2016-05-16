@@ -1,24 +1,22 @@
-package cn.e23.shunpai.base;
+package cn.e23.shunpai.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.huewu.pla.lib.XListView;
 import com.huewu.pla.lib.internal.PLA_AdapterView;
 import com.zhy.http.okhttp.OkHttpUtils;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import cn.e23.shunpai.R;
 import cn.e23.shunpai.activity.DetailActivity;
 import cn.e23.shunpai.activity.VRDetailActivity;
 import cn.e23.shunpai.adapter.StaggeredAdapter;
-import cn.e23.shunpai.fragment.VRFragment;
+import cn.e23.shunpai.base.BaseFragment;
 import cn.e23.shunpai.http.JsonArrayCallBack;
 import cn.e23.shunpai.model.Video;
 import okhttp3.Call;

@@ -3,7 +3,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import cn.e23.shunpai.base.BaseListFragment;
+
 import cn.e23.shunpai.constant.Constant;
 
 public class HotFragment extends BaseListFragment {

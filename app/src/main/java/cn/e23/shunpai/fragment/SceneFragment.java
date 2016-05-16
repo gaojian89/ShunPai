@@ -1,14 +1,10 @@
 package cn.e23.shunpai.fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cn.e23.shunpai.R;
-import cn.e23.shunpai.base.BaseActivity;
-import cn.e23.shunpai.base.BaseListFragment;
 import cn.e23.shunpai.constant.Constant;
 
 public class SceneFragment extends BaseListFragment {

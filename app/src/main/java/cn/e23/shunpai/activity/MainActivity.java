@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import cn.e23.shunpai.R;
 import cn.e23.shunpai.adapter.MainPagerAdapter;
 import cn.e23.shunpai.application.App;
-import cn.e23.shunpai.base.BaseListFragment;
+import cn.e23.shunpai.fragment.BaseListFragment;
 import cn.e23.shunpai.base.MActivity;
 import cn.e23.shunpai.fragment.HotFragment;
 import cn.e23.shunpai.fragment.LiveFragment;

@@ -21,6 +21,47 @@
         android:textOff=""
         android:textOn="" />
 
+
+    <LinearLayout
+        android:id="@+id/video_play_tools_btn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        >
+
+
+        <ToggleButton
+            android:id="@+id/video_toolbar_btn_gyro"
+            android:layout_width="@dimen/vr_video_tools_btn_wh"
+            android:layout_height="@dimen/vr_video_tools_btn_wh"
+            android:background="@drawable/video_toolbar_tb_gyro"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <ToggleButton
+            android:id="@+id/video_toolbar_btn_screen"
+            android:layout_width="@dimen/vr_video_tools_btn_wh"
+            android:layout_height="@dimen/vr_video_tools_btn_wh"
+            android:background="@drawable/video_toolbar_tb_screen"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            />
+        <ToggleButton
+            android:id="@+id/video_toolbar_btn_full_screen"
+            android:layout_width="@dimen/vr_video_tools_btn_wh"
+            android:layout_height="@dimen/vr_video_tools_btn_wh"
+            android:background="@drawable/video_toolbar_tb_fullscreen"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+    </LinearLayout>
     <RelativeLayout
         android:id="@+id/video_toolbar_rlPlayProg"
         android:layout_width="wrap_content"
@@ -28,7 +69,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:layout_toLeftOf="@+id/video_toolbar_btn_gyro"
+        android:layout_toLeftOf="@+id/video_play_tools_btn_layout"
         android:layout_toRightOf="@+id/video_toolbar_btn_playpause"
         android:gravity="center_vertical">
 
@@ -59,44 +100,7 @@
             android:thumbOffset="0dip" />
     </RelativeLayout>
 
-    <ToggleButton
-        android:id="@+id/video_toolbar_btn_full_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/video_toolbar_tb_fullscreen"
-        android:checked="false"
-        android:text=""
-        android:textOff=""
-        android:textOn="" />
 
-    <ToggleButton
-        android:id="@+id/video_toolbar_btn_gyro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="6dp"
-        android:layout_toLeftOf="@id/video_toolbar_btn_full_screen"
-        android:background="@drawable/video_toolbar_tb_gyro"
-        android:text=""
-        android:textOff=""
-        android:textOn="" />
-
-    <ToggleButton
-        android:id="@+id/video_toolbar_btn_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="12dp"
-        android:layout_toLeftOf="@id/video_toolbar_btn_full_screen"
-        android:background="@drawable/video_toolbar_tb_screen"
-        android:checked="false"
-        android:text=""
-        android:textOff=""
-        android:textOn=""
-        android:visibility="gone"/>
 
 
 </RelativeLayout>

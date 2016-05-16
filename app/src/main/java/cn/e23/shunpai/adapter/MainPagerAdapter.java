@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import cn.e23.shunpai.base.BaseListFragment;
+import cn.e23.shunpai.fragment.BaseListFragment;
 
 /**
  * Created by jian on 2016/4/28.
