@@ -6,7 +6,6 @@ import android.view.View;
 
 import cn.e23.shunpai.R;
 import io.vov.vitamio.MediaPlayer;
-import io.vov.vitamio.Vitamio;
 import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
 
