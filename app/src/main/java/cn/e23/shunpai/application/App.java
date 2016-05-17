@@ -20,8 +20,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import io.vov.vitamio.Vitamio;
-
 /**
  * gaojian
  * */
@@ -36,7 +34,6 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         OkHttpUtils.getInstance().setConnectTimeout(100000, TimeUnit.MILLISECONDS);
-        Vitamio.isInitialized(getApplicationContext());
         initImageLoader();
         try {
             version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
