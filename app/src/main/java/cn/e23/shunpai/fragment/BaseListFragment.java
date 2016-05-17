@@ -15,6 +15,7 @@ import java.util.List;
 import cn.e23.shunpai.R;
 import cn.e23.shunpai.activity.DetailActivity;
 import cn.e23.shunpai.activity.VRDetailActivity;
+import cn.e23.shunpai.activity.VideoDetailActivity;
 import cn.e23.shunpai.adapter.StaggeredAdapter;
 import cn.e23.shunpai.base.BaseFragment;
 import cn.e23.shunpai.http.JsonArrayCallBack;
@@ -66,6 +67,8 @@ public abstract class BaseListFragment extends BaseFragment {
                     if(video != null) {
                         if(video.getCatid().equals(VRFragment.CATID)) {
                             intent.setClass(mActivity, VRDetailActivity.class);
+                        }else {
+                            intent.setClass(mActivity, VideoDetailActivity.class);
                         }
                         Bundle bundle  = new Bundle();
                         bundle.putSerializable(DetailActivity.VIDEO, video);

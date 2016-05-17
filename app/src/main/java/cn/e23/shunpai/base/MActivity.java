@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.e23.shunpai.R;
+import io.vov.vitamio.Vitamio;
 
 /**
  * gaojian
@@ -35,6 +36,9 @@ public abstract class MActivity extends BaseActivity{
             requestWindowFeature(Window.FEATURE_NO_TITLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+        if(isInitVitamio()) {
+            Vitamio.isInitialized(getApplicationContext());
         }
         setContentView(R.layout.activity_m);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -189,5 +193,5 @@ public abstract class MActivity extends BaseActivity{
         win.setAttributes(winParams);
     }
     protected abstract boolean isFullScreen();
-
+    protected abstract boolean isInitVitamio();
 }

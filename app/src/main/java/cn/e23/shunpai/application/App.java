@@ -20,6 +20,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.vov.vitamio.Vitamio;
+
 /**
  * gaojian
  * */
@@ -27,13 +29,14 @@ public class App extends Application {
     private static List<WeakReference<Activity>> mActivities = new LinkedList<WeakReference<Activity>>();
     private HashMap<String, Object> cache = new HashMap<String, Object>();
     private static App instance = null;
-    private boolean isAppRunning;;
+    private boolean isAppRunning;
     public static String version="";
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
         OkHttpUtils.getInstance().setConnectTimeout(100000, TimeUnit.MILLISECONDS);
+        Vitamio.isInitialized(getApplicationContext());
         initImageLoader();
         try {
             version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;

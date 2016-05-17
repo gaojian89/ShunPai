@@ -468,4 +468,9 @@ public class VRDetailActivity extends DetailActivity implements UVPlayerCallBack
     protected View getVideo() {
         return inflater.inflate(R.layout.activity_vrdetail, null);
     }
+
+    @Override
+    protected boolean isInitVitamio() {
+        return false;
+    }
 }

@@ -227,4 +227,9 @@ public class MainActivity extends MActivity implements View.OnClickListener, Vie
     protected boolean isFullScreen() {
         return false;
     }
+
+    @Override
+    protected boolean isInitVitamio() {
+        return false;
+    }
 }
