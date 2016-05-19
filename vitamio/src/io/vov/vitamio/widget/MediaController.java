@@ -94,9 +94,11 @@ public class MediaController extends FrameLayout {
   private boolean mInstantSeeking = false;
   private boolean mFromXml = false;
   private ImageButton mPauseButton;
+  private ImageButton mFullScreenButton;
   private AudioManager mAM;
   private OnShownListener mShownListener;
   private OnHiddenListener mHiddenListener;
+  private OnFullScreenListener fullScreenListener;
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @Override
@@ -117,10 +119,16 @@ public class MediaController extends FrameLayout {
       }
     }
   };
-  private View.OnClickListener mPauseListener = new View.OnClickListener() {
+  private OnClickListener mPauseListener = new OnClickListener() {
     public void onClick(View v) {
       doPauseResume();
       show(sDefaultTimeout);
+    }
+  };
+  private OnClickListener mFullScreenListener = new OnClickListener() {
+    @Override
+    public void onClick(View v) {
+      fullScreenListener.onFullScreen();
     }
   };
   private OnSeekBarChangeListener mSeekListener = new OnSeekBarChangeListener() {
@@ -164,7 +172,17 @@ public class MediaController extends FrameLayout {
       mHandler.sendEmptyMessageDelayed(SHOW_PROGRESS, 1000);
     }
   };
-
+  public MediaController(Context context, boolean fromXml, View container) {
+    super(context);
+    initController(context);
+    mFromXml = fromXml;
+    mRoot = makeControllerView();
+    //这个地方的FrameLayout.LayoutpParams是因为布局文件中要把MediaController的视图作为childView加到一个FrameLayout中去
+    FrameLayout.LayoutParams p = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);//想怎样布局MediaController就尽情的发挥这个LayoutParams吧
+    p.gravity = Gravity.BOTTOM;
+    mRoot.setLayoutParams(p);
+    ((FrameLayout)container).addView(mRoot);
+  }
   public MediaController(Context context, AttributeSet attrs) {
     super(context, attrs);
     mRoot = this;
@@ -236,7 +254,7 @@ public class MediaController extends FrameLayout {
    * @return The controller view.
    */
   protected View makeControllerView() {
-    return ((LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(getResources().getIdentifier("mediacontroller", "layout", mContext.getPackageName()), this);
+   return ((LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(getResources().getIdentifier("mediacontroller", "layout", mContext.getPackageName()), this);
   }
 
   private void initControllerView(View v) {
@@ -244,6 +262,11 @@ public class MediaController extends FrameLayout {
     if (mPauseButton != null) {
       mPauseButton.requestFocus();
       mPauseButton.setOnClickListener(mPauseListener);
+    }
+    mFullScreenButton = (ImageButton) v.findViewById(getResources().getIdentifier("mediacontroller_full_screen","id", mContext.getPackageName()));
+    if(mFullScreenButton != null) {
+      mFullScreenButton.requestFocus();
+      mFullScreenButton.setOnClickListener(mFullScreenListener);
     }
 
     mProgress = (SeekBar) v.findViewById(getResources().getIdentifier("mediacontroller_seekbar", "id", mContext.getPackageName()));
@@ -388,6 +411,10 @@ public class MediaController extends FrameLayout {
     mHiddenListener = l;
   }
 
+  public void setOnFullScreenListener(OnFullScreenListener l) {
+    fullScreenListener = l;
+  }
+
   private long setProgress() {
     if (mPlayer == null || mDragging)
       return 0;
@@ -482,6 +509,10 @@ public class MediaController extends FrameLayout {
 
   public interface OnHiddenListener {
     public void onHidden();
+  }
+
+  public interface OnFullScreenListener {
+    public void onFullScreen();
   }
 
   public interface MediaPlayerControl {

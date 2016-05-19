@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="74dp"
+    android:layout_height="40dp"
     android:background="@color/mediacontroller_bg"
     android:orientation="vertical" >
 
@@ -28,15 +28,32 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/mediacontroller_play_pause" />
-
-        <TextView
-            android:id="@+id/mediacontroller_time_total"
-            style="@style/MediaController_Text"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="5dp" />
+            android:id="@+id/mediacontroller_right_layout"
+            >
+            <TextView
+                android:id="@+id/mediacontroller_time_total"
+                style="@style/MediaController_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <ImageButton
+                android:id="@+id/mediacontroller_full_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/mediacontroller_button"
+                android:contentDescription="@string/mediacontroller_full_screen"
+                android:src="@drawable/mediacontroller_fullscreen" />
+        </LinearLayout>
+
+
 
         <SeekBar
             android:id="@+id/mediacontroller_seekbar"
@@ -44,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/mediacontroller_time_total"
+            android:layout_toLeftOf="@id/mediacontroller_right_layout"
             android:layout_toRightOf="@id/mediacontroller_time_current"
             android:focusable="true"
             android:max="1000" />
@@ -57,6 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:ellipsize="marquee"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:visibility="gone"
+        />
 
 </LinearLayout>
